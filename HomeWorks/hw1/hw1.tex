@@ -1,0 +1,620 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Домашняя работа №1},
+            pdfauthor={Nikitin Dmitry RI-450004},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Домашняя работа №1}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Nikitin Dmitry RI-450004}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{26 сентября 2018 г}
+
+
+\begin{document}
+\maketitle
+
+\subsection{Работа с данными.}\label{--.}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Загрузите данные в датафрейм.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data.df <-}\StringTok{ }\KeywordTok{read.table}\NormalTok{(}\StringTok{"http://people.math.umass.edu/~anna/Stat597AFall2016/rnf6080.dat"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Сколько строк и столбцов в \texttt{data.df}? Если получилось не 5070
+  наблюдений 27 переменных, то проверяйте аргументы.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{nrow}\NormalTok{(data.df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5070
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ncol}\NormalTok{(data.df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 27
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Получите имена колонок из датафрейма.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{colnames}\NormalTok{(data.df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "V1"  "V2"  "V3"  "V4"  "V5"  "V6"  "V7"  "V8"  "V9"  "V10" "V11"
+## [12] "V12" "V13" "V14" "V15" "V16" "V17" "V18" "V19" "V20" "V21" "V22"
+## [23] "V23" "V24" "V25" "V26" "V27"
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Найдите значение из 5 строки седьмого столбца.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data.df[}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Напечатайте целиком 2 строку из датафрейма.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data.df[}\DecValTok{2}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   V1 V2 V3 V4 V5 V6 V7 V8 V9 V10 V11 V12 V13 V14 V15 V16 V17 V18 V19 V20
+## 2 60  4  2  0  0  0  0  0  0   0   0   0   0   0   0   0   0   0   0   0
+##   V21 V22 V23 V24 V25 V26 V27
+## 2   0   0   0   0   0   0   0
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Объясните, что делает следующая строка кода
+  \texttt{names(data.df)\ \textless{}-\ c("year",\ "month",\ "day",\ seq(0,23))}.
+  Воспользуйтесь функциями \texttt{head} и \texttt{tail}, чтобы
+  просмотреть таблицу. Что представляют собой последние 24 колонки?
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{names}\NormalTok{(data.df) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"year"}\NormalTok{, }\StringTok{"month"}\NormalTok{, }\StringTok{"day"}\NormalTok{, }\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{23}\NormalTok{))}
+\KeywordTok{head}\NormalTok{(data.df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   year month day 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21
+## 1   60     4   1 0 0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0  0
+## 2   60     4   2 0 0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0  0
+## 3   60     4   3 0 0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0  0
+## 4   60     4   4 0 0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0  0
+## 5   60     4   5 0 0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0  0
+## 6   60     4   6 0 0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0  0
+##   22 23
+## 1  0  0
+## 2  0  0
+## 3  0  0
+## 4  0  0
+## 5  0  0
+## 6  0  0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{tail}\NormalTok{(data.df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      year month day 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+## 5065   80    11  25 0 0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0
+## 5066   80    11  26 0 0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0
+## 5067   80    11  27 0 0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0
+## 5068   80    11  28 0 0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0
+## 5069   80    11  29 0 0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0
+## 5070   80    11  30 0 0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0
+##      21 22 23
+## 5065  0  0  0
+## 5066  0  0  0
+## 5067  0  0  0
+## 5068  0  0  0
+## 5069  0  0  0
+## 5070  0  0  0
+\end{verbatim}
+
+Эта строка присваивает имена колонкам датафрейма, последние 24 колонки -
+количество осадков за определенный час, номер котрого равен названию
+столбца. 7. Добавьте новую колонку с названием \emph{daily}, в которую
+запишите сумму крайних правых 24 колонок. Постройте гистограмму по этой
+колонке. Какие выводы можно сделать?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data.df<-}\KeywordTok{cbind}\NormalTok{(data.df, }\DataTypeTok{daily=}\KeywordTok{c}\NormalTok{(}\KeywordTok{rowSums}\NormalTok{(data.df[}\DecValTok{4}\OperatorTok{:}\DecValTok{27}\NormalTok{])))}
+\KeywordTok{hist}\NormalTok{(data.df[,}\StringTok{"daily"}\NormalTok{], }\DataTypeTok{prob=}\OtherTok{TRUE}\NormalTok{, }\DataTypeTok{main =} \StringTok{"Гистограмма осадков"}\NormalTok{,}\DataTypeTok{xlab=}\StringTok{"Количество осадков"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## неизвестна ширина символа 0xb3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## неизвестна ширина символа 0x1b
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## неизвестна ширина символа 0xff
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## неизвестна ширина символа 0x8c
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## неизвестна ширина символа 0xba
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## неизвестна ширина символа 0xff
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## неизвестна ширина символа 0x8c
+\end{verbatim}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-7-1.pdf}
+Гистограмма не предоставляет адекватных сведений, т.к. в датафрейме
+встречаются отрицательные значения. 8.Создайте новый датафрейм
+\texttt{fixed.df} в котром исправьте замеченную ошибку. Постройте новую
+гистограмму, поясните почему она более корректна.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fixed.df <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(data.df,data.df[,}\StringTok{"daily"}\NormalTok{]}\OperatorTok{>=}\DecValTok{0}\NormalTok{)}
+\KeywordTok{hist}\NormalTok{(fixed.df[,}\StringTok{"daily"}\NormalTok{], }\DataTypeTok{prob =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{main =} \StringTok{"Гистограмма осадков"}\NormalTok{,}\DataTypeTok{xlab=}\StringTok{"Количество осадков"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## неизвестна ширина символа 0xb3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## неизвестна ширина символа 0x1b
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## неизвестна ширина символа 0xff
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## неизвестна ширина символа 0x8c
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## неизвестна ширина символа 0xba
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## неизвестна ширина символа 0xff
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## неизвестна ширина символа 0x8c
+\end{verbatim}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-8-1.pdf} Из данных
+было исключено подмножество отрицательных значений и теперь гистограмма
+не противоречит здравому смыслу. \#\# Синтаксис и типизирование 1. Для
+каждой строки кода поясните полученный результат, либо объясните почему
+она ошибочна. Создание вектора
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"4"}\NormalTok{, }\StringTok{"8"}\NormalTok{, }\StringTok{"15"}\NormalTok{, }\StringTok{"16"}\NormalTok{, }\StringTok{"23"}\NormalTok{, }\StringTok{"42"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Поиск максимального элемента в векторе, в данном случае строки которая
+больше всех с точки зрения расположения символов в алфавите.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{max}\NormalTok{(v)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "8"
+\end{verbatim}
+
+Сортировка элементов массива в алфавитном порядке.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sort}\NormalTok{(v)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "15" "16" "23" "4"  "42" "8"
+\end{verbatim}
+
+Строка sum(v) - ошибочна, так как в R к строкам не применимо сложение.
+2. Для следующих наборов команд поясните полученный результат, либо
+объясните почему они ошибочна. Создание вектора и неявный каст числового
+типа к типу character так как вектор должен содержать элементы одного
+типа.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v2 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"5"}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{12}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Строка v2{[}2{]} + 2{[}3{]} - операция сложения не применима к типу
+character. Создание датафрейма.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df3 <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{z1=}\StringTok{"5"}\NormalTok{,}\DataTypeTok{z2=}\DecValTok{7}\NormalTok{,}\DataTypeTok{z3=}\DecValTok{12}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Сложение второго и третьего элемента превой строки датафрейма. Сложение
+срабатывает так как столбцы датафрейма могут иметь разные типы и при
+создании каста к character не происходит.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df3[}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{df3[}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 19
+\end{verbatim}
+
+Создание списка.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{l4 <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{z1=}\StringTok{"6"}\NormalTok{, }\DataTypeTok{z2=}\DecValTok{42}\NormalTok{, }\DataTypeTok{z3=}\StringTok{"49"}\NormalTok{, }\DataTypeTok{z4=}\DecValTok{126}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Сложение 2ого и 4ого элементов списка. Обращение к элементу происходит с
+помощью оператора {[}{[}{]}{]}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{l4[[}\DecValTok{2}\NormalTok{]] }\OperatorTok{+}\StringTok{ }\NormalTok{l4[[}\DecValTok{4}\NormalTok{]]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 168
+\end{verbatim}
+
+l4{[}2{]} + l4{[}4{]} - в этой строке с помощью операции {[}{]}
+получаются 2 слайса, но оператор + может быть применен только к числовым
+операндам. \#\# Работа с функциями и операторами 1. Оператор двоеточие
+создаёт последовательность целых чисел по порядку. Этот оператор ---
+частный случай функции \texttt{seq()}, которую вы использовали раньше.
+Изучите эту функцию, вызвав команду \texttt{?seq}. Испольуя полученные
+знания выведите на экран: Числа от 1 до 10000 с инкрементом 372.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{10000}\NormalTok{, }\DataTypeTok{by=}\DecValTok{372}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1]    1  373  745 1117 1489 1861 2233 2605 2977 3349 3721 4093 4465 4837
+## [15] 5209 5581 5953 6325 6697 7069 7441 7813 8185 8557 8929 9301 9673
+\end{verbatim}
+
+Числа от 1 до 10000 длиной 50.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{10000}\NormalTok{, }\DataTypeTok{length.out=}\DecValTok{372}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   [1]     1.00000    27.95148    54.90296    81.85445   108.80593
+##   [6]   135.75741   162.70889   189.66038   216.61186   243.56334
+##  [11]   270.51482   297.46631   324.41779   351.36927   378.32075
+##  [16]   405.27224   432.22372   459.17520   486.12668   513.07817
+##  [21]   540.02965   566.98113   593.93261   620.88410   647.83558
+##  [26]   674.78706   701.73854   728.69003   755.64151   782.59299
+##  [31]   809.54447   836.49596   863.44744   890.39892   917.35040
+##  [36]   944.30189   971.25337   998.20485  1025.15633  1052.10782
+##  [41]  1079.05930  1106.01078  1132.96226  1159.91375  1186.86523
+##  [46]  1213.81671  1240.76819  1267.71968  1294.67116  1321.62264
+##  [51]  1348.57412  1375.52561  1402.47709  1429.42857  1456.38005
+##  [56]  1483.33154  1510.28302  1537.23450  1564.18598  1591.13747
+##  [61]  1618.08895  1645.04043  1671.99191  1698.94340  1725.89488
+##  [66]  1752.84636  1779.79784  1806.74933  1833.70081  1860.65229
+##  [71]  1887.60377  1914.55526  1941.50674  1968.45822  1995.40970
+##  [76]  2022.36119  2049.31267  2076.26415  2103.21563  2130.16712
+##  [81]  2157.11860  2184.07008  2211.02156  2237.97305  2264.92453
+##  [86]  2291.87601  2318.82749  2345.77898  2372.73046  2399.68194
+##  [91]  2426.63342  2453.58491  2480.53639  2507.48787  2534.43935
+##  [96]  2561.39084  2588.34232  2615.29380  2642.24528  2669.19677
+## [101]  2696.14825  2723.09973  2750.05121  2777.00270  2803.95418
+## [106]  2830.90566  2857.85714  2884.80863  2911.76011  2938.71159
+## [111]  2965.66307  2992.61456  3019.56604  3046.51752  3073.46900
+## [116]  3100.42049  3127.37197  3154.32345  3181.27493  3208.22642
+## [121]  3235.17790  3262.12938  3289.08086  3316.03235  3342.98383
+## [126]  3369.93531  3396.88679  3423.83827  3450.78976  3477.74124
+## [131]  3504.69272  3531.64420  3558.59569  3585.54717  3612.49865
+## [136]  3639.45013  3666.40162  3693.35310  3720.30458  3747.25606
+## [141]  3774.20755  3801.15903  3828.11051  3855.06199  3882.01348
+## [146]  3908.96496  3935.91644  3962.86792  3989.81941  4016.77089
+## [151]  4043.72237  4070.67385  4097.62534  4124.57682  4151.52830
+## [156]  4178.47978  4205.43127  4232.38275  4259.33423  4286.28571
+## [161]  4313.23720  4340.18868  4367.14016  4394.09164  4421.04313
+## [166]  4447.99461  4474.94609  4501.89757  4528.84906  4555.80054
+## [171]  4582.75202  4609.70350  4636.65499  4663.60647  4690.55795
+## [176]  4717.50943  4744.46092  4771.41240  4798.36388  4825.31536
+## [181]  4852.26685  4879.21833  4906.16981  4933.12129  4960.07278
+## [186]  4987.02426  5013.97574  5040.92722  5067.87871  5094.83019
+## [191]  5121.78167  5148.73315  5175.68464  5202.63612  5229.58760
+## [196]  5256.53908  5283.49057  5310.44205  5337.39353  5364.34501
+## [201]  5391.29650  5418.24798  5445.19946  5472.15094  5499.10243
+## [206]  5526.05391  5553.00539  5579.95687  5606.90836  5633.85984
+## [211]  5660.81132  5687.76280  5714.71429  5741.66577  5768.61725
+## [216]  5795.56873  5822.52022  5849.47170  5876.42318  5903.37466
+## [221]  5930.32615  5957.27763  5984.22911  6011.18059  6038.13208
+## [226]  6065.08356  6092.03504  6118.98652  6145.93801  6172.88949
+## [231]  6199.84097  6226.79245  6253.74394  6280.69542  6307.64690
+## [236]  6334.59838  6361.54987  6388.50135  6415.45283  6442.40431
+## [241]  6469.35580  6496.30728  6523.25876  6550.21024  6577.16173
+## [246]  6604.11321  6631.06469  6658.01617  6684.96765  6711.91914
+## [251]  6738.87062  6765.82210  6792.77358  6819.72507  6846.67655
+## [256]  6873.62803  6900.57951  6927.53100  6954.48248  6981.43396
+## [261]  7008.38544  7035.33693  7062.28841  7089.23989  7116.19137
+## [266]  7143.14286  7170.09434  7197.04582  7223.99730  7250.94879
+## [271]  7277.90027  7304.85175  7331.80323  7358.75472  7385.70620
+## [276]  7412.65768  7439.60916  7466.56065  7493.51213  7520.46361
+## [281]  7547.41509  7574.36658  7601.31806  7628.26954  7655.22102
+## [286]  7682.17251  7709.12399  7736.07547  7763.02695  7789.97844
+## [291]  7816.92992  7843.88140  7870.83288  7897.78437  7924.73585
+## [296]  7951.68733  7978.63881  8005.59030  8032.54178  8059.49326
+## [301]  8086.44474  8113.39623  8140.34771  8167.29919  8194.25067
+## [306]  8221.20216  8248.15364  8275.10512  8302.05660  8329.00809
+## [311]  8355.95957  8382.91105  8409.86253  8436.81402  8463.76550
+## [316]  8490.71698  8517.66846  8544.61995  8571.57143  8598.52291
+## [321]  8625.47439  8652.42588  8679.37736  8706.32884  8733.28032
+## [326]  8760.23181  8787.18329  8814.13477  8841.08625  8868.03774
+## [331]  8894.98922  8921.94070  8948.89218  8975.84367  9002.79515
+## [336]  9029.74663  9056.69811  9083.64960  9110.60108  9137.55256
+## [341]  9164.50404  9191.45553  9218.40701  9245.35849  9272.30997
+## [346]  9299.26146  9326.21294  9353.16442  9380.11590  9407.06739
+## [351]  9434.01887  9460.97035  9487.92183  9514.87332  9541.82480
+## [356]  9568.77628  9595.72776  9622.67925  9649.63073  9676.58221
+## [361]  9703.53369  9730.48518  9757.43666  9784.38814  9811.33962
+## [366]  9838.29111  9865.24259  9892.19407  9919.14555  9946.09704
+## [371]  9973.04852 10000.00000
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Функция \texttt{rep()} повторяет переданный вектор указанное число
+  раз. Объясните разницу между \texttt{rep(1:5,times=3)} и
+  \texttt{rep(1:5,\ each=3)}. Повторяет последовательность переданную в
+  качестве первого аргумента заданное число раз
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{,}\DataTypeTok{times=}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5
+\end{verbatim}
+
+Потворяет каждый элемент из последовательности заданное число раз
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{, }\DataTypeTok{each=}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5
+\end{verbatim}
+
+
+\end{document}
