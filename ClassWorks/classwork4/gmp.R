@@ -1,7 +1,7 @@
 gmp <- read.table(file="https://raw.githubusercontent.com/SergeyMirvoda/MD-DA-2018/master/data/gmp.dat")
 gmp$pop <- gmp$gmp/gmp$pcgmp
 View(gmp)
-#функция проверки гипотезы https://arxiv.org/pdf/1102.4101.pdf
+#функция для проверки гипотезы https://arxiv.org/pdf/1102.4101.pdf
 #a - подгоняемый коэффициент
 #y0 - некое начальное значение 
 #responce - средний доход на душу населения в мегалаполисе
