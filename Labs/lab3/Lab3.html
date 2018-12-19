@@ -554,8 +554,11 @@ worths</code></pre>
 <pre class="r"><code>sum(worths[1:20])/sum(worths)</code></pre>
 <pre><code>## [1] 0.4921114</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li>В данных <a href="https://www.federalreserve.gov/releases/z1/current/z1.pdf">федерального резерва США</a> найдите показатель дохода всех домохозяйств (Household net worth) в соответвующем году, какую долю общего дохода составляют 100 богатейших людей. Страница не найдена.</li>
+<li>В данных <a href="https://www.federalreserve.gov/releases/z1/current/html/introductory_text.htm">федерального резерва США</a> найдите показатель дохода всех домохозяйств (Household net worth) в соответвующем году, какую долю общего дохода составляют 100 богатейших людей.</li>
 </ol>
+<pre class="r"><code>household.2013 &lt;- 78.332*10^12
+sum(worths)/household.2013</code></pre>
+<pre><code>## [1] 0.01650666</code></pre>
 </div>
 
 

@@ -110,6 +110,10 @@ sum(worths[1:5])/sum(worths)
 ```{r}
 sum(worths[1:20])/sum(worths)
 ```
-   4. В данных [федерального резерва США](https://www.federalreserve.gov/releases/z1/current/z1.pdf) найдите
+   4. В данных [федерального резерва США](https://www.federalreserve.gov/releases/z1/current/html/introductory_text.htm) найдите
    показатель дохода всех домохозяйств (Household net worth) в соответвующем году, какую долю
-   общего дохода составляют 100 богатейших людей. Страница не найдена.
+   общего дохода составляют 100 богатейших людей.
+```{r}
+household.2013 <- 78.332*10^12
+sum(worths)/household.2013
+```
